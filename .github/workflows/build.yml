@@ -26,7 +26,7 @@ jobs:
       - name: Build and push Docker image - Oracle JDK 23
         uses: docker/build-push-action@v6
         with:
-          context: ./oracle-jdk23
+          context: ./oraclejdk23
           file: ./Dockerfile
           push: true
           tags: |
