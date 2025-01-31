@@ -27,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./oraclejdk23
-          file: ./Dockerfile
+          file: ./oraclejdk23/Dockerfile
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/java4docker:oraclejdk23
