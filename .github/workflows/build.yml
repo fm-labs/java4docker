@@ -3,8 +3,8 @@ name: Build and Push Image to DockerHub
 on:
   branch:
     - main
-  release:
-    types: [ published ]
+  #release:
+  #  types: [ published ]
 
 jobs:
   build:
