@@ -14,18 +14,18 @@ docker buildx build $BUILD_ARGS \
   -t ${REPO_NAME}:openjdk21 \
   ./openjdk21
 
-# OpenJDK 21 Alpine
-docker buildx build $BUILD_ARGS \
-  -f ./openjdk21/Dockerfile-alpine \
-  -t ${REPO_NAME}:openjdk21-alpine \
-  ./openjdk21
-
-
 # OpenJDK 23 Debian-Bookworm
 docker buildx build $BUILD_ARGS \
   -f ./openjdk23/Dockerfile \
   -t ${REPO_NAME}:openjdk23 \
   ./openjdk23
+
+
+# OpenJDK 21 Alpine
+docker buildx build $BUILD_ARGS \
+  -f ./openjdk21/Dockerfile-alpine \
+  -t ${REPO_NAME}:openjdk21-alpine \
+  ./openjdk21
 
 # OpenJDK 23 Alpine
 docker buildx build $BUILD_ARGS \
@@ -49,5 +49,4 @@ docker buildx build $BUILD_ARGS \
 docker buildx build $BUILD_ARGS \
   -f ./oraclejdk23/Dockerfile \
   -t ${REPO_NAME}:oraclejdk23 \
-  --push \
   ./oraclejdk23

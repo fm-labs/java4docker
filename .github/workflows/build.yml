@@ -32,7 +32,8 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/java4docker:oraclejdk21
           platforms: linux/amd64,linux/arm64
-          
+
+
       - name: Build and push Docker image - Oracle JDK 23
         uses: docker/build-push-action@v6
         with:
@@ -41,4 +42,26 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/java4docker:oraclejdk23
+          platforms: linux/amd64,linux/arm64
+
+
+      - name: Build and push Docker image - OpenJDK 23
+        uses: docker/build-push-action@v6
+        with:
+          context: ./openjdk23
+          file: ./openjdk23/Dockerfile
+          push: true
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/java4docker:openjdk23
+          platforms: linux/amd64,linux/arm64
+
+
+      - name: Build and push Docker image - OpenJDK 23 Alpine
+        uses: docker/build-push-action@v6
+        with:
+          context: ./openjdk23
+          file: ./openjdk23/Dockerfile-alpine
+          push: true
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/java4docker:openjdk23-alpine
           platforms: linux/amd64,linux/arm64
