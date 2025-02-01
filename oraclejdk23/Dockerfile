@@ -1,6 +1,7 @@
 FROM debian:bookworm-slim
 
 ARG TARGETARCH
+ARG JAVA_VERSION
 
 # install os packages
 ENV DEBIAN_FRONTEND=noninteractive
@@ -26,5 +27,4 @@ ENV JAVA_HOME=/docker-java-home
 ENV JAVA_VERSION=23
 ENV PATH=$JAVA_HOME/bin:$PATH
 
-# -XX:UseSVE=0 is a workaround to run on ARM64
-CMD ["java", "-XX:UseSVE=0", "-version"]
+CMD ["java", "-version"]
